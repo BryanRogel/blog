@@ -27,14 +27,16 @@ header
     position relative
     padding 2em
     padding-top 1em
-    background linear-gradient(180deg, rgba(255, 255, 255, 0.13) 0%, rgba(0, 0, 0, 0.67) 100%),  url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') center
+    background linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%),  url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') center
     background-size cover
     min-height 200px
     display flex
     justify-content center
     flex-wrap wrap
     align-items center
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.15);
     section
+        padding-bottom 1em
         text-align center
         h1
             font-size 1.75em

@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "My personal blog and portafolio",
+  "description": "Mi blog personal y portafolio",
   "author": "Abdiel Martinez",
   "private": true,
   "scripts": {
@@ -12,13 +12,15 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/style-resources": "^0.1.2",
     "cross-env": "^5.2.0",
     "frontmatter-markdown-loader": "^1.6.0",
     "nuxt": "^2.4.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2"
+    "stylus-loader": "^3.0.2",
+    "vue-sticky-directive": "0.0.8"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
