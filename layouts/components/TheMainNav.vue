@@ -24,6 +24,9 @@ export default {
         }
         
     }, 
+    destroyed(){
+        document.removeEventListener('scroll');
+    },
     methods:{
         onScroll(e){
 

@@ -30,6 +30,9 @@ export default {
         fechaLetras(){
             return '05 de marzo 2019';
         }
+    },
+    mounted(){
+        this.$emit('load');
     }
 }
 </script>
@@ -100,5 +103,21 @@ article.card
         bottom 1em
         .comments
             margin-right 2em
+
+@media(max-width: 600px)
+    .largeCard
+        display block
+        & > header
+            height 200px !important
+            border-right 0 !important
+            border-bottom 1px solid #dcdde1 !important
+        & > section
+            position relative
+        footer
+            position static
+            padding-top 1em !important
+            .comments
+                margin-right 0
+
 </style>
 

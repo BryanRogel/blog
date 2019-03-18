@@ -58,12 +58,12 @@ header
             border: 4px solid #FFFFFF;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 @media(max-width: 689px)
-  header
+    header
         padding-bottom 4em
         figure
             padding-right 3em
             padding-left @padding-right
-      
+
 </style>
 
 
