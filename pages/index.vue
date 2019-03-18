@@ -10,6 +10,7 @@ main
       :descripcion='articulo.descripcion'
       :tags='articulo.tags'
       :comentarios='articulo.comentarios'
+      :class='{largeCard: cardLarge(grupo,index)}'
       )
 </template>
 
@@ -81,14 +82,46 @@ export default {
           ],
           comentarios:1
         },
-        
+        {
+          titulo:'Titulo articulo 6',
+          fecha:'2019-02-02',
+          tiempo_lectura: '4 minutos',
+          descripcion: 'descripccion de mi articulo',
+          tags:[
+            {name:'Vue', link:'#'},
+            {name:'Nuxt', link:'#'}
+          ],
+          comentarios:1
+        },
+        {
+          titulo:'Titulo articulo 7',
+          fecha:'2019-02-02',
+          tiempo_lectura: '4 minutos',
+          descripcion: 'descripccion de mi articulo',
+          tags:[
+            {name:'Vue', link:'#'},
+            {name:'Nuxt', link:'#'}
+          ],
+          comentarios:1
+        },
+        {
+          titulo:'Titulo articulo 8',
+          fecha:'2019-02-02',
+          tiempo_lectura: '4 minutos',
+          descripcion: 'descripccion de mi articulo',
+          tags:[
+            {name:'Vue', link:'#'},
+            {name:'Nuxt', link:'#'}
+          ],
+          comentarios:1
+        },
       ]
     }
   },
   computed:{
     grupoDeTres(){
       //agrupa los articulos en grpos para mostrarse en distintos tamanio
-      const n               = 3
+      const n               = 5
       const nGrupos         = Math.ceil(this.articulos.length / n)
       const gruposArticulos = [];
       const penultimaI = nGrupos-2;
@@ -108,6 +141,16 @@ export default {
       }
 
       return gruposArticulos;
+    }
+  },
+  methods:{
+    cardLarge(grupo, index){
+
+      if(grupo.length>3 || grupo.length==2){
+        if(index==grupo.length-1 || index==grupo.length-2)
+          return true
+      }else 
+        return false
     }
   }
 }

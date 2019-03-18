@@ -19,8 +19,7 @@
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "vue-sticky-directive": "0.0.8"
+    "stylus-loader": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"

@@ -36,7 +36,7 @@ export default {
 
 <style lang="stylus">
 article.card
-    margin 2em
+    margin 1em
     flex 1 350px
     font-family 'Open Sans'
     background white
@@ -82,5 +82,23 @@ article.card
         transform scaleY(1) scaleX(1)
         box-shadow 0px 0px 7px rgba(0, 0, 0, 0.25)
         transition 0.3s
+
+.largeCard
+    display flex
+    position relative
+    & > header, & > section
+        flex 1
+    & > header
+        height 300px !important
+        border-right 1px solid #dcdde1
+        border-bottom 0 !important
+    & > section
+        position relative
+    footer
+        width 100%
+        position absolute
+        bottom 1em
+        .comments
+            margin-right 2em
 </style>
 
