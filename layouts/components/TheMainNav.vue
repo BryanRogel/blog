@@ -25,7 +25,8 @@ export default {
         
     }, 
     destroyed(){
-        document.removeEventListener('scroll');
+        if (process.client) 
+            document.removeEventListener('scroll',this.onScroll);
     },
     methods:{
         onScroll(e){

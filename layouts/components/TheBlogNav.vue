@@ -1,9 +1,9 @@
 <template lang="pug">
-nav(ref='mainNav' :class='{fijado:fijado}')
+nav(ref='secondNav' :class='{fijado:fijado}')
     a
         span
     nuxt-link(to='/') Inicio
-    nuxt-link(to='portafolio') Portafolio
+    nuxt-link(to='/portafolio') Portafolio
     a
         i.fas.fa-search
 </template>
@@ -17,7 +17,7 @@ export default {
     },
     mounted(){
         if (process.client) {
-            const nav = this.$refs.mainNav
+            const nav = this.$refs.secondNav
             this.distanciaTop = nav.offsetTop;
 
             document.addEventListener('scroll', this.onScroll);
@@ -25,12 +25,13 @@ export default {
         
     }, 
     destroyed(){
-        document.removeEventListener('scroll');
+        if (process.client) 
+            document.removeEventListener('scroll',this.onScroll);
     },
     methods:{
         onScroll(e){
 
-            const nav = this.$refs.mainNav
+            const nav = this.$refs.secondNav
             let origOffsetY = nav.offsetTop;
             
             if(window.scrollY >= origOffsetY )
@@ -41,9 +42,6 @@ export default {
         }
     }
 }
-
-
-
 </script>
 
 
@@ -76,13 +74,12 @@ nav
         &:first-child
             position relative
             padding-left 0.8em
-            float left
+            // float left
             span
-                position relative
                 display inline-block
                 background url('/logo.png') center
                 background-size cover
-                height 100%;
+                height 25px;
                 width @height;
         &:last-child
             float right
