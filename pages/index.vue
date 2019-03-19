@@ -4,16 +4,13 @@ main
     CardArticle( 
       v-for='(articulo, index) of grupo'
       :key='index'
-      :ref='"card" + index + "_g"+ i'
       :titulo='articulo.titulo'
       :fecha='articulo.fecha'
       :tiempo_lectura='articulo.tiempo_lectura'
       :descripcion='articulo.descripcion'
       :tags='articulo.tags'
       :comentarios='articulo.comentarios'
-      :class='{largeCard: articulo.large}'
-      @load='cardLarge(grupo,index,i,articulo.id)'
-      @resize='cardLarge(grupo,index,i,articulo.id)'
+      :class='{largeCard: (grupo.length==2 || grupo.length==1)}'
       )
 </template>
 
@@ -28,7 +25,6 @@ export default {
   },
   data(){
     return{
-      sobrante:0,
       articulos:[
         {
           id:1,
@@ -41,7 +37,7 @@ export default {
             {name:'Nuxt', link:'#'}
           ],
           comentarios:1,
-          large:false
+          
         },
         {
           id:2,
@@ -54,7 +50,7 @@ export default {
             {name:'Nuxt', link:'#'}
           ],
           comentarios:1,
-          large:false
+          
         },
         {
           id:3,
@@ -67,7 +63,7 @@ export default {
             {name:'Nuxt', link:'#'}
           ],
           comentarios:1,
-          large:false
+          
         },
         {
           id:4,
@@ -80,7 +76,7 @@ export default {
             {name:'Nuxt', link:'#'}
           ],
           comentarios:1,
-          large:false
+          
         },
         {
           id:5,
@@ -93,7 +89,7 @@ export default {
             {name:'Nuxt', link:'#'}
           ],
           comentarios:1,
-          large:false
+          
         },
         {
           id:6,
@@ -106,7 +102,7 @@ export default {
             {name:'Nuxt', link:'#'}
           ],
           comentarios:1,
-          large:false
+          
         },
         {
           id:7,
@@ -119,11 +115,11 @@ export default {
             {name:'Nuxt', link:'#'}
           ],
           comentarios:1,
-          large:false
+          
         },
         {
-          id:8,
-          titulo:'Titulo articulo 8',
+          id:7,
+          titulo:'Titulo articulo 7',
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
           descripcion: 'descripccion de mi articulo',
@@ -132,7 +128,7 @@ export default {
             {name:'Nuxt', link:'#'}
           ],
           comentarios:1,
-          large:false
+          
         },
       ]
     }
@@ -140,48 +136,27 @@ export default {
   computed:{
     grupoDeTres(){
       //agrupa los articulos en grpos para mostrarse en distintos tamanio
-      const n               = 5
-      const nGrupos         = Math.ceil(this.articulos.length / n)
+      let inicio            = 0;
+      let restantes         = this.articulos.length;
+      let cont              = 3;
       const gruposArticulos = [];
-      const penultimaI = nGrupos-2;
 
-      for (let i = 0; i < nGrupos; i++){
 
-        if(i==penultimaI){ //penultima iteracion   
+      while(restantes>0){
+        cont=cont || 3;
 
-          if(this.articulos.length % n == 1){
-            gruposArticulos.push(this.articulos.slice(i*n,(i*n)+(n+1)));
-            break;
-          }
-        }
+        gruposArticulos.push(this.articulos.slice(inicio,(inicio+cont))); 
 
-        // iteracion normal
-        gruposArticulos.push(this.articulos.slice(i*n,(i*n)+n)); 
+        inicio    += cont;
+        restantes -= cont;
+        cont--;
       }
 
       return gruposArticulos;
     },
   },
   methods:{
-    cardLarge(grupo, index,indexG,id){
-      const cards=this.$refs;
-      const indexArticulo = this.articulos.findIndex(element=>element.id==id);
-
-      if(process.client){
-        console.log('algo ');
-        
-        if(window.innerWidth > 600)
-          this.articulos[indexArticulo].large=true;
-        else
-          this.articulos[indexArticulo].large=false;
-      }
-      
-      if(grupo.length>3 || grupo.length==2){
-        if(index==grupo.length-1 || index==grupo.length-2)
-          return true
-      }else 
-        return false
-    }
+    
   }
 }
 </script>

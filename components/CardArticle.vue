@@ -39,12 +39,12 @@ export default {
 
 <style lang="stylus">
 article.card
-    margin 1em
+    margin 1.5em
     flex 1 350px
     font-family 'Open Sans'
     background white
     border-radius 7px
-    box-shadow 0px 0px 7px rgba(0, 0, 0, 0.25)
+    box-shadow 0px 4px 3px rgba(0, 0, 0, 0.25)
     transition 1s 
     h2 
         line-height 15px
@@ -79,12 +79,10 @@ article.card
         .comments
             float right
     &:hover
-        box-shadow 0px 0px 3px rgba(0, 0, 0, 0.25)
-        transform scaleY(1.03) scaleX(1.03)
+        box-shadow 0px 10px 20px rgba(0, 0, 0, 0.25)
     &:active
-        transform scaleY(1) scaleX(1)
         box-shadow 0px 0px 7px rgba(0, 0, 0, 0.25)
-        transition 0.3s
+        transition 0.1s
 
 .largeCard
     display flex
