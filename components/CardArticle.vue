@@ -1,8 +1,8 @@
 <template lang="pug">
 article.card
-    header(v-lazy:background-image="img" @click='abrirArticulo')
+    nuxt-link(v-lazy:background-image="img"  :to='url')
     section
-        header(@click='abrirArticulo')
+        nuxt-link(:to='url')
             h2 {{ titulo }}
             .subtitle
                 time(:datetime='fecha') {{fechaLetras}} 
@@ -50,10 +50,15 @@ article.card
     border-radius 7px
     box-shadow 0px 4px 3px rgba(0, 0, 0, 0.25)
     transition 1s 
+    *
+        text-decoration none
+        &:visited, &:link
+            color black
     h2 
         line-height 15px
         margin-bottom 7px
-    & > header
+    & > a
+        display block
         width 100%
         height 200px
         border-bottom 1px solid #dcdde1
@@ -93,9 +98,9 @@ article.card
 .largeCard
     display flex
     position relative
-    & > header, & > section
+    & > a, & > section
         flex 1
-    & > header
+    & > a
         height 300px !important
         border-right 1px solid #dcdde1
         border-bottom 0 !important
@@ -111,7 +116,7 @@ article.card
 @media(max-width: 600px)
     .largeCard
         display block
-        & > header
+        & > a
             height 200px !important
             border-right 0 !important
             border-bottom 1px solid #dcdde1 !important
