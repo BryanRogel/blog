@@ -1,5 +1,5 @@
 <template lang="pug">
-nav(ref='mainNav' :class='{fijado:fijado}')
+nav(ref='mainNav' :class='{fijado:isFijado}')
     a
         i.fas.fa-cloud-moon
     nuxt-link(to='/') Inicio
@@ -11,7 +11,7 @@ nav(ref='mainNav' :class='{fijado:fijado}')
 export default {
     data(){
         return{
-            fijado:false,
+            isFijado:false,
             distanciaTop:0
         }
     },
@@ -35,10 +35,10 @@ export default {
             let origOffsetY = nav.offsetTop;
             
             if(window.scrollY >= origOffsetY )
-                this.fijado=true;
+                this.isFijado=true;
 
             if(window.scrollY<this.distanciaTop)
-                this.fijado=false;
+                this.isFijado=false;
         }
     }
 }
@@ -53,7 +53,6 @@ export default {
     position fixed
     top 0
     z-index 3
-    transition 1s 
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
 
 nav

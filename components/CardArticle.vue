@@ -1,8 +1,8 @@
 <template lang="pug">
 article.card
-    header
+    header(v-lazy:background-image="img" @click='abrirArticulo')
     section
-        header
+        header(@click='abrirArticulo')
             h2 {{ titulo }}
             .subtitle
                 time(:datetime='fecha') {{fechaLetras}} 
@@ -10,7 +10,7 @@ article.card
             p {{descripcion}}
         footer
             .tags
-                nuxt-link( v-for='(tag, index) of tags' :to='tag.link' :key='index') {{tag.name}} 
+                nuxt-link( v-for='(tag, index) of tags' :to='`tag/${tag}`' :key='index') {{tag}} 
             .comments( v-if='comentarios')
                 i.far.fa-comment-alt  {{comentarios}}
 </template>
@@ -19,29 +19,33 @@ article.card
 <script>
 export default {
     props:{
+        img:{type:String, required: true},
         titulo:{type:String, required: true},
         fecha:{type: String, required:true},
         tiempo_lectura:{type: String, required:true},
         descripcion:{type: String, required:true},
         tags:{type:Array, required:true},
-        comentarios:{type:Number, required:true}
+        comentarios:{type:Number, required:true},
+        url:{type: String},
     },
     computed:{
         fechaLetras(){
             return '05 de marzo 2019';
         }
     },
-    mounted(){
-        this.$emit('load');
+    methods:{
+        abrirArticulo(){
+            this.$router.push(this.url);
+        }
     }
 }
 </script>
 
 <style lang="stylus">
 article.card
+    cursor pointer
     margin 1.5em
     flex 1 350px
-    font-family 'Open Sans'
     background white
     border-radius 7px
     box-shadow 0px 4px 3px rgba(0, 0, 0, 0.25)
@@ -53,10 +57,12 @@ article.card
         width 100%
         height 200px
         border-bottom 1px solid #dcdde1
-        background-image url('https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg') 
+        opacity 1
+        // background-image url('https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg') 
         background-position center
         background-size contain
         background-repeat no-repeat
+        transition 1s
 
     & > section
         padding 15px

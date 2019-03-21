@@ -10,6 +10,8 @@ main
       :descripcion='articulo.descripcion'
       :tags='articulo.tags'
       :comentarios='articulo.comentarios'
+      :img='articulo.img'
+      :url='articulo.url'
       :class='{largeCard: (grupo.length==2 || grupo.length==1)}'
       )
 </template>
@@ -32,12 +34,10 @@ export default {
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
           descripcion: 'descripccion de mi articulo',
-          tags:[
-            {name:'Vue', link:'#'},
-            {name:'Nuxt', link:'#'}
-          ],
+          tags:['Vue','Nuxt'],
           comentarios:1,
-          
+          img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png',
+          url:'blog/1'
         },
         {
           id:2,
@@ -45,12 +45,10 @@ export default {
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
           descripcion: 'descripccion de mi articulo',
-          tags:[
-            {name:'Vue', link:'#'},
-            {name:'Nuxt', link:'#'}
-          ],
+          tags:['Vue','Nuxt'],
           comentarios:1,
-          
+          img:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
+          url:'blog/1'
         },
         {
           id:3,
@@ -58,12 +56,10 @@ export default {
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
           descripcion: 'descripccion de mi articulo',
-          tags:[
-            {name:'Vue', link:'#'},
-            {name:'Nuxt', link:'#'}
-          ],
+          tags:['Vue','Nuxt'],
           comentarios:1,
-          
+          img:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
+          url:'blog/1'
         },
         {
           id:4,
@@ -71,12 +67,10 @@ export default {
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
           descripcion: 'descripccion de mi articulo',
-          tags:[
-            {name:'Vue', link:'#'},
-            {name:'Nuxt', link:'#'}
-          ],
+          tags:['Vue','Nuxt'],
           comentarios:1,
-          
+          img:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
+          url:'blog/1'
         },
         {
           id:5,
@@ -84,12 +78,10 @@ export default {
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
           descripcion: 'descripccion de mi articulo',
-          tags:[
-            {name:'Vue', link:'#'},
-            {name:'Nuxt', link:'#'}
-          ],
+          tags:['Vue','Nuxt'],
           comentarios:1,
-          
+          img:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
+          url:'blog/1'
         },
         {
           id:6,
@@ -97,12 +89,10 @@ export default {
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
           descripcion: 'descripccion de mi articulo',
-          tags:[
-            {name:'Vue', link:'#'},
-            {name:'Nuxt', link:'#'}
-          ],
+          tags:['Vue','Nuxt'],
           comentarios:1,
-          
+          img:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
+          url:'blog/1'
         },
         {
           id:7,
@@ -110,12 +100,10 @@ export default {
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
           descripcion: 'descripccion de mi articulo',
-          tags:[
-            {name:'Vue', link:'#'},
-            {name:'Nuxt', link:'#'}
-          ],
+          tags:['Vue','Nuxt'],
           comentarios:1,
-          
+          img:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
+          url:'blog/1'
         },
         {
           id:7,
@@ -123,12 +111,10 @@ export default {
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
           descripcion: 'descripccion de mi articulo',
-          tags:[
-            {name:'Vue', link:'#'},
-            {name:'Nuxt', link:'#'}
-          ],
+          tags:['Vue','Nuxt'],
           comentarios:1,
-          
+          img:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
+          url:'blog/1'
         },
       ]
     }
@@ -162,8 +148,6 @@ export default {
 </script>
 
 <style lang="stylus">
-body
-  background-color $fondoClaro
 main
   padding 2em
 
