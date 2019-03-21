@@ -1,6 +1,6 @@
 <template lang="pug">
 article.card
-    nuxt-link(v-lazy:background-image="img"  :to='url')
+    nuxt-link(v-lazy:background-image="imagen"  :to='url')
     section
         nuxt-link(:to='url')
             h2 {{ titulo }}
@@ -31,13 +31,15 @@ export default {
     computed:{
         fechaLetras(){
             return '05 de marzo 2019';
+        },
+        imagen(){
+            return {
+                src: this.img,
+                error: '/img/default.svg',
+                loading: '/img/default.svg'
+            }
         }
     },
-    methods:{
-        abrirArticulo(){
-            this.$router.push(this.url);
-        }
-    }
 }
 </script>
 
