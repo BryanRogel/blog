@@ -107,7 +107,7 @@ export default {
         },
         {
           id:7,
-          titulo:'Titulo articulo 7',
+          titulo:'Titulo articulo 8',
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
           descripcion: 'descripccion de mi articulo',
