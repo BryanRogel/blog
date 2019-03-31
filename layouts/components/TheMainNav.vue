@@ -1,10 +1,10 @@
 <template lang="pug">
 nav(ref='mainNav' :class='{fijado:isFijado}')
-    a
+    a(href='#' @click.prevent)
         i.fas.fa-cloud-moon
     nuxt-link(to='/') Inicio
-    nuxt-link(to='portafolio') Portafolio
-    a
+    nuxt-link(to='/portafolio') Portafolio
+    a(href='#' @click.prevent)
         i.fas.fa-search
 </template>
 <script>
@@ -56,7 +56,7 @@ export default {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
 
 nav
-    // position absolute
+    font-family Roboto
     position relative
     width 100%
     // bottom 0px

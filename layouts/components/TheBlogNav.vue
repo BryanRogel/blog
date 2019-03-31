@@ -1,7 +1,7 @@
 <template lang="pug">
 nav(ref='secondNav' :class='{fijado:fijado}')
-    a
-        span
+    nuxt-link(to='/')
+        img(src='/logo.png')
     nuxt-link(to='/') Inicio
     nuxt-link(to='/portafolio') Portafolio
     a
@@ -51,16 +51,17 @@ export default {
     top 0
     z-index 3
     transition 1s 
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
 
 nav
+    font-family Roboto
     // position absolute
     position relative
     width 100%
     // bottom 0px
     text-align center
     box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
     color white
     font-size 1.25em
     
@@ -72,15 +73,11 @@ nav
         &:hover
             background: rgba(0, 0, 0, .5)
         &:first-child
-            position relative
-            padding-left 0.8em
-            // float left
-            span
-                display inline-block
-                background url('/logo.png') center
-                background-size cover
-                height 25px;
-                width @height;
+            padding-top 0.4em
+            padding-bottom 0.15em
+            float left
+            img
+                height 1.4em
         &:last-child
             float right
             padding-right 0.8em

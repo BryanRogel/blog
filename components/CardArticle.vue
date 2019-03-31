@@ -51,7 +51,7 @@ article.card
     background white
     border-radius 7px
     box-shadow 0px 4px 3px rgba(0, 0, 0, 0.25)
-    transition 1s 
+    transition 0.5s 
     *
         text-decoration none
         &:visited, &:link
@@ -92,8 +92,10 @@ article.card
         .comments
             float right
     &:hover
+        transform translateY(-10px)
         box-shadow 0px 10px 20px rgba(0, 0, 0, 0.25)
     &:active
+        transform translateY(0px)
         box-shadow 0px 0px 7px rgba(0, 0, 0, 0.25)
         transition 0.1s
 

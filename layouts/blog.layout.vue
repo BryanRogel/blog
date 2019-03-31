@@ -1,15 +1,15 @@
 <template>
     <div>
-        <TheBlogNav/>
+        <TheNav/>
         <nuxt />
     </div>
 </template>
 
 <script>
-import TheBlogNav from './components/TheBlogNav'
+import TheNav from './components/TheMainNav'
 export default {
     components:{
-        TheBlogNav
+        TheNav
     }
 
 }
