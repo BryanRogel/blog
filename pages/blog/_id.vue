@@ -1,15 +1,26 @@
 <template lang="pug">
     main.article
-        Logo
+        Contenido(:componentes='contenido')
         //- vue-disqus(shortname='abdielmartinez' identifier='a1s2d3')
 </template>
 
 <script>
-import Logo from '@/components/ArticuloContenido'
+import Contenido from '@/components/ArticuloContenido'
 export default {
     layout:'blog.layout',
+    async asyncData(){
+        const file = await import('@/assets/articulos/prueba.md')
+        return {
+            atributos:file.attributes,
+            contenido:file.html,
+            file:file
+        }
+    },
+    mounted(){
+        console.log('file',this.file);
+    },
     components: {
-        Logo
+        Contenido
     }
 }
 </script>
