@@ -1,7 +1,3 @@
-<template lang="pug">
-  div(v-html='componentes')
-</template>
-
 <script>
 import algo from './algo'
 
@@ -10,10 +6,17 @@ export default {
   components:{
     algo
   },
-  
-  props:[
-    'componentes'
-  ]
+  props:{
+    render      : {type: String, required: true},
+    staticRender: {type: String, required: true}
+  },
+  render (createElement) {
+    return this.templateRender ? this.templateRender() : createElement("div", "Rendering");
+  },
+  created () {
+    this.templateRender = new Function(this.render)();
+    this.$options.staticRenderFns = new Function(this.staticRender)();
+  }
 }
 </script>
 

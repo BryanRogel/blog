@@ -1,7 +1,7 @@
 <template lang="pug">
     main.article
-        Contenido(:componentes='contenido')
-        //- vue-disqus(shortname='abdielmartinez' identifier='a1s2d3')
+        Contenido(:render='render' :staticRender='staticRender')
+        vue-disqus(shortname='abdielmartinez' identifier='a1s2d3')
 </template>
 
 <script>
@@ -11,13 +11,10 @@ export default {
     async asyncData(){
         const file = await import('@/assets/articulos/prueba.md')
         return {
-            atributos:file.attributes,
-            contenido:file.html,
-            file:file
+            atributos    : file.attributes,
+            render       : file.vue.render,
+            staticRender : file.vue.staticRenderFns,
         }
-    },
-    mounted(){
-        console.log('file',this.file);
     },
     components: {
         Contenido
