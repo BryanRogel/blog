@@ -1,6 +1,6 @@
 <template lang="pug">
 nav(ref='mainNav' :class='{fijado:isFijado}')
-    a(href='#' @click.prevent)
+    a(href='#' @click.prevent='cambiarTema')
         i.fas.fa-cloud-moon
     nuxt-link(to='/') Inicio
     nuxt-link(to='/portafolio') Portafolio
@@ -39,6 +39,15 @@ export default {
 
             if(window.scrollY<=this.distanciaTop)
                 this.isFijado=false;
+        },
+        cambiarTema(){
+            if(process.client){
+                const root = document.documentElement;  //elemento root
+                root.style.setProperty('--fondo-primario', '#1c2833');
+                root.style.setProperty('--fondo-secundario', '#273746');
+                root.style.setProperty('--font-primary-color', '#8395a7');
+                root.style.setProperty('--font-secondary-color', '#808b96');
+            }
         }
     }
 }

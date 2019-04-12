@@ -48,14 +48,14 @@ article.card
     cursor pointer
     margin 1.5em
     flex 1 350px
-    background white
-    border-radius 7px
+    background var(--fondo-secundario)
+    border-radius var(--border-radius)
     box-shadow 0px 4px 3px rgba(0, 0, 0, 0.25)
     transition 0.5s 
     *
         text-decoration none
         &:visited, &:link
-            color black
+            color var(--font-primary-color)
     h2 
         line-height 15px
         margin-bottom 7px
@@ -66,15 +66,16 @@ article.card
         border-bottom 1px solid #dcdde1
         opacity 1
         // background-image url('https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg') 
+        border-radius var(--border-radius)
         background-position center
-        background-size contain
+        background-size cover
         background-repeat no-repeat
         transition 1s
 
     & > section
         padding 15px
         .subtitle
-            color #8395a7
+            color var(--font-secondary-color)
             margin-bottom 7px
         p
             text-align justify  

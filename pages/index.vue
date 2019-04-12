@@ -106,7 +106,7 @@ export default {
           url:'blog/1'
         },
         {
-          id:7,
+          id:8,
           titulo:'Titulo articulo 8',
           fecha:'2019-02-02',
           tiempo_lectura: '4 minutos',
@@ -129,6 +129,11 @@ export default {
 
 
       while(restantes>0){
+        if(cont==1){
+          cont--;
+          continue;
+        }
+
         cont=cont || 3;
 
         gruposArticulos.push(this.articulos.slice(inicio,(inicio+cont))); 

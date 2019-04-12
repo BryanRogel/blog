@@ -24,7 +24,7 @@ export default {
 
 <style lang="stylus">
 main.article
-    background gray
+    background var(--fondo-secundario);
     margin auto
     font-family 'Open sans'
     width 80%
