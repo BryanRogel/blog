@@ -9,7 +9,6 @@ nav(ref='mainNav' :class='{fijado:isFijado}')
 </template>
 <script>
 export default {
-    props:['fijar'],
     data(){
         return{
             isFijado:false,
