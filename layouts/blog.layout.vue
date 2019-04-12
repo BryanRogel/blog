@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TheNav class='fijado'/>
+        <TheNav />
         <nuxt />
     </div>
 </template>

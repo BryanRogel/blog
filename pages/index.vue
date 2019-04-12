@@ -155,5 +155,15 @@ main
   display flex
   flex-wrap wrap
   justify-content center
+
+@media(min-width: 1370px)
+  main
+    padding-left 5%
+    padding-right @padding-left
+
+@media(min-width: 1495px)
+  main
+    padding-left 10%
+    padding-right @padding-left
 </style>
 

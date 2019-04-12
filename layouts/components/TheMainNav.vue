@@ -9,10 +9,12 @@ nav(ref='mainNav' :class='{fijado:isFijado}')
 </template>
 <script>
 export default {
+    props:['fijar'],
     data(){
         return{
             isFijado:false,
-            distanciaTop:0
+            distanciaTop:0,
+            componentePapa:'header',
         }
     },
     mounted(){
@@ -22,7 +24,6 @@ export default {
 
             document.addEventListener('scroll', this.onScroll);
         }
-        
     }, 
     destroyed(){
         if (process.client) 
@@ -37,7 +38,7 @@ export default {
             if(window.scrollY >= origOffsetY )
                 this.isFijado=true;
 
-            if(window.scrollY<this.distanciaTop)
+            if(window.scrollY<=this.distanciaTop)
                 this.isFijado=false;
         }
     }
