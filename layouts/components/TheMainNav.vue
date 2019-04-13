@@ -1,7 +1,7 @@
 <template lang="pug">
 nav(ref='mainNav' :class='{fijado:isFijado}')
     a(href='#' @click.prevent='cambiarTema')
-        i.fas.fa-cloud-moon
+        i.fas.fa-moon(ref='themeBotton')
     nuxt-link(to='/') Inicio
     nuxt-link(to='/portafolio') Portafolio
     a(href='#' @click.prevent)
@@ -43,10 +43,30 @@ export default {
         cambiarTema(){
             if(process.client){
                 const root = document.documentElement;  //elemento root
-                root.style.setProperty('--fondo-primario', '#1c2833');
-                root.style.setProperty('--fondo-secundario', '#273746');
-                root.style.setProperty('--font-primary-color', '#8395a7');
-                root.style.setProperty('--font-secondary-color', '#808b96');
+
+                if(localStorage.getItem('theme')){
+                    // LIGHT THEME
+                    localStorage.removeItem('theme');
+
+                    root.style.setProperty('--fondo-primario', '#f5f6fa');
+                    root.style.setProperty('--fondo-secundario', '#fff');
+                    root.style.setProperty('--font-primary-color', 'black');
+                    root.style.setProperty('--font-secondary-color', '#8395a7');
+
+                    this.$refs.themeBotton.classList.add('fa-moon')
+                    this.$refs.themeBotton.classList.remove('fa-sun');
+                }else{
+                    //DARKS THEME
+                    localStorage.setItem('theme','true');
+
+                    root.style.setProperty('--fondo-primario', '#1c2833');
+                    root.style.setProperty('--fondo-secundario', '#273746');
+                    root.style.setProperty('--font-primary-color', '#8395a7');
+                    root.style.setProperty('--font-secondary-color', '#808b96');
+
+                    this.$refs.themeBotton.classList.remove('fa-moon')
+                    this.$refs.themeBotton.classList.add('fa-sun');
+                }
             }
         }
     }

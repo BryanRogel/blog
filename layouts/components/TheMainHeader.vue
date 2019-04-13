@@ -43,6 +43,7 @@ header
         padding-bottom 1em
         text-align center
         h1
+            color black
             font-size 1.75em
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         span
