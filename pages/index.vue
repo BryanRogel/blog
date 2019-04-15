@@ -163,12 +163,12 @@ main
 
 @media(min-width: 1370px)
   main
-    padding-left 5%
-    padding-right @padding-left
+    margin-left 5%
+    margin-right @margin-left
 
 @media(min-width: 1495px)
   main
-    padding-left 10%
-    padding-right @padding-left
+    margin-left 10%
+    margin-right @margin-left
 </style>
 

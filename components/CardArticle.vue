@@ -66,7 +66,7 @@ article.card
         border-bottom 1px solid #dcdde1
         opacity 1
         // background-image url('https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg') 
-        border-radius var(--border-radius) var(--border-radius) 0 0
+        border-radius var(--border-radius)
         background-position center
         background-size cover
         background-repeat no-repeat
