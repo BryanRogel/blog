@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 :root
-    --fondo-primario #f5f6fa
-    --fondo-secundario #fff
+    --fondo-primario #dfe6e9    
+    --fondo-secundario #fefefe
     --font-primary-color black
     --font-secondary-color #8395a7
     --border-radius 7px
@@ -19,8 +19,24 @@ body
 main 
     font-family 'Open Sans'
 
+
+::-webkit-scrollbar 
+    width: 10px
+
+
+::-webkit-scrollbar-track 
+    background: rgba(#f1f1f1,0.1) 
+
+
+::-webkit-scrollbar-thumb 
+    background: rgba(#888, 0.5) 
+
+
+::-webkit-scrollbar-thumb:hover 
+    background: rgba(#888,0.8) 
+
 .page-enter-active, .page-leave-active 
-    transition: opacity .5s;
+    transition: opacity .5s
 
 .page-enter, .page-leave-to 
     opacity: 0;

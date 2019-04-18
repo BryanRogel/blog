@@ -22,8 +22,8 @@ export const mutations = {
         {
             localStorage.removeItem('theme');
 
-            root.style.setProperty('--fondo-primario', '#f5f6fa');
-            root.style.setProperty('--fondo-secundario', '#fff');
+            root.style.setProperty('--fondo-primario', '#dfe6e9');
+            root.style.setProperty('--fondo-secundario', '#fefefe');
             root.style.setProperty('--font-primary-color', 'black');
             root.style.setProperty('--font-secondary-color', '#8395a7');
         }

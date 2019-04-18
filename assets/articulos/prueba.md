@@ -10,8 +10,101 @@ tags: ['tag1','taj2']
 
 # Post body
 
-Using markdown.
+Lorem ipsum dolor sit amet consectetur, adipiscing elit et euismod nascetur, justo erat fames tempus. Lacus cubilia consequat ante mus massa fusce nunc sociosqu, lobortis fringilla sollicitudin id viverra proin. Ut porttitor libero urna laoreet sapien ante morbi velit sociis, dignissim fusce est ultricies proin purus fames placerat, vivamus sagittis nibh conubia feugiat penatibus faucibus curae.
+
+```html
+<script>
+import algo from './algo'
+
+export default {
+  //necesario para exportar con los componentes internos dentro del md
+  components:{
+    algo
+  },
+  props:{
+    render      : {type: String, required: true},
+    staticRender: {type: String, required: true}
+  },
+  render (createElement) {
+    return this.templateRender ? this.templateRender() : createElement("div", "Rendering");
+  },
+  created () {
+    this.templateRender = new Function(this.render)();
+    this.$options.staticRenderFns = new Function(this.staticRender)();
+  }
+}
+</script>
+```
+
+```javascript
+const persona = {nombre: 'abdiel', edad:21}
+(()=>{
+    console.log('algo');
+});
+```
+---
+```pug
+article.card
+    nuxt-link(v-lazy:background-image="imagen"  :to='url')
+    section
+        nuxt-link(:to='url')
+            h2 {{ titulo }}
+            .subtitle
+                time(:datetime='fecha') {{fechaLetras}} 
+                span | {{tiempo_lectura}}
+            p {{descripcion}}
+        footer
+            .tags
+                nuxt-link( v-for='(tag, index) of tags' :to='`tag/${tag}`' :key='index') {{tag}} 
+            .comments( v-if='comentarios')
+                i.far.fa-comment-alt  {{comentarios}}
+```
+---
+
+```stylus
+.fijado
+    position fixed
+    top 0
+    z-index 3
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+
+nav
+    font-family Roboto
+    position relative
+    width 100%
+    // bottom 0px
+    text-align center
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%);
+    color white
+    font-size 1.25em
+    
+    a
+        display inline-block
+        padding 0.5em 0.7em
+        text-decoration none
+        color white
+        &:hover
+            background: rgba(0, 0, 0, .5)
+        &:first-child
+            padding-left 0.8em
+            float left
+        &:last-child
+            float right
+            padding-right 0.8em
+```
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+Ut morbi torquent magna ornare feugiat posuere velit gravida sagittis tincidunt duis ad arcu, conubia at rhoncus leo bibendum himenaeos congue sociis odio accumsan dui cras, nunc aenean quam cursus enim dictum sollicitudin metus phasellus nascetur sociosqu blandit. Condimentum parturient cum congue sociis egestas nulla elementum dapibus, nec himenaeos metus gravida mollis diam vehicula, nascetur hac ac nisi nostra lacinia aenean. Metus a suspendisse laoreet mauris rhoncus eros interdum ultrices facilisi tincidunt maecenas, dis cubilia est curabitur mattis nec faucibus inceptos eget.
+Three or more...
+
+---
 
 <algo/>
 
-usando markdown.jpg
+Lorem ipsum dolor sit amet consectetur, adipiscing elit et euismod nascetur, justo erat fames tempus. Lacus cubilia consequat ante mus massa fusce nunc sociosqu, lobortis fringilla sollicitudin id viverra proin. Ut porttitor libero urna laoreet sapien ante morbi velit sociis, dignissim fusce est ultricies proin purus fames placerat, vivamus sagittis nibh conubia feugiat penatibus faucibus curae.
