@@ -6,15 +6,12 @@
 
 <script>
 import Contenido from '@/components/ArticuloContenido'
-// require('@/plugins/prismjs/prism.js')
-// require('')
+
 export default {
     layout:'blog.layout',
     head(){
         return{
-            link:[
-                { rel:"stylesheet", href:"/prismjs/prism.css"}
-            ],
+            link:[{ rel:"stylesheet", href:"/prismjs/prism.css"}],
             script:[{ src:'/prismjs/prism.js'}]
         }
     },
@@ -38,6 +35,8 @@ main.article
     margin auto
     font-family 'Open sans'
     width 80%
+    p
+        text-align justify
     pre
         position relative
         border-radius var(--border-radius)

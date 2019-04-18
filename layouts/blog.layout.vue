@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TheNav />
+        <TheNav/>
         <nuxt />
     </div>
 </template>
@@ -16,3 +16,7 @@ export default {
     },
 }
 </script>
+<style lang="stylus" scoped>
+nav:not(.isDarkTheme)
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+</style>

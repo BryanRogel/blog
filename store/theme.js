@@ -15,7 +15,7 @@ export const mutations = {
 
             root.style.setProperty('--fondo-primario', '#1c2833');
             root.style.setProperty('--fondo-secundario', '#273746');
-            root.style.setProperty('--font-primary-color', '#8395a7');
+            root.style.setProperty('--font-primary-color', '#a6acaf');
             root.style.setProperty('--font-secondary-color', '#808b96');
         }
         else

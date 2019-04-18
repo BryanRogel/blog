@@ -1,5 +1,5 @@
 <template lang="pug">
-nav(ref='mainNav' :class='{fijado:isFijado}')
+nav(ref='mainNav' :class='{fijado:isFijado, isDarkTheme:isDarkTheme}')
     a(href='#' @click.prevent='cambiarTema')
         i.fas(ref='themeBotton' :class="{'fa-sun':isDarkTheme, 'fa-moon': !isDarkTheme }")
     nuxt-link(to='/') Inicio
