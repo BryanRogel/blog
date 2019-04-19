@@ -37,7 +37,7 @@ export default {
           tags:['Vue','Nuxt'],
           comentarios:1,
           img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png',
-          url:'blog/1'
+          url:'blog/tema-lavarel'
         },
         {
           id:2,
@@ -48,7 +48,7 @@ export default {
           tags:['Vue','Nuxt'],
           comentarios:1,
           img:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
-          url:'blog/1'
+          url:'blog/tema-vue'
         },
         {
           id:3,

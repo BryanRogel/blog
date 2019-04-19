@@ -5,12 +5,11 @@ article.card
         nuxt-link(:to='url')
             h2 {{ titulo }}
             .subtitle
-                Fecha(date='2018-06-09' time='16:10')
+                Fecha(date='2018-06-09')
                 // span | {{tiempo_lectura}}
             p {{descripcion}}
         footer
-            .tags
-                nuxt-link( v-for='(tag, index) of tags' :to='`tag/${tag}`' :key='index') {{tag}} 
+            Tags(:tags='tags')
             .comments( v-if='comentarios')
                 i.far.fa-comment-alt  {{comentarios}}
 </template>
@@ -18,6 +17,7 @@ article.card
 
 <script>
 import Fecha from './Fecha'
+import Tags from './Tags'
 export default {
     props:{
         img:{type:String, required: true},
@@ -30,7 +30,8 @@ export default {
         url:{type: String},
     },
     components:{
-        Fecha
+        Fecha,
+        Tags
     },
     computed:{
         fechaLetras(){
@@ -85,16 +86,8 @@ article.card
             text-align justify  
     footer
         padding-top 1em
-        .tags, .comments
-            display inline
-        .tags a
-            margin-right 5px
-            color white
-            padding 2px 12px
-            text-decoration none
-            background linear-gradient(144.56deg, #00E27B 4.62%, #00A6BE 137.38%)
-            border-radius: 13px
         .comments
+            display inline
             float right
     &:hover
         transform translateY(-10px)

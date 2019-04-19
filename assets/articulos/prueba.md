@@ -1,16 +1,15 @@
 ---
 title:  "Super titulo shido"
-description: "mi descripcion"
-date: "2017-04-18"
+description: "Este es un articulo sobre vue, pusg, stylus, nuxt laravel y todo loque se me ocurra poner"
+date: "2019-04-18"
 time: "15:25"
-cover: "/img/logo.png"
+cover: "/logo.png"
 slug: "super-titulo"
 keywords: ['keyword1', 'keyword2']
-tags: ['tag1','taj2']
+tags: ['Vue','Nuxt']
 ---
 
-# Post body
-
+## Subtitulo 1
 Lorem ipsum dolor sit amet consectetur, adipiscing elit et euismod nascetur, justo erat fames tempus. Lacus cubilia consequat ante mus massa fusce nunc sociosqu, lobortis fringilla sollicitudin id viverra proin. Ut porttitor libero urna laoreet sapien ante morbi velit sociis, dignissim fusce est ultricies proin purus fames placerat, vivamus sagittis nibh conubia feugiat penatibus faucibus curae.
 
 * item lista 1
@@ -49,6 +48,8 @@ article.card
     z-index 3
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
 ```
+
+
 
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
