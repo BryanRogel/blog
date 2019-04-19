@@ -3,7 +3,7 @@ title:  "Super titulo shido"
 description: "Este es un articulo sobre vue, pusg, stylus, nuxt laravel y todo loque se me ocurra poner"
 date: "2019-04-18"
 time: "15:25"
-cover: "/logo.png"
+cover: "/logo.svg"
 slug: "super-titulo"
 keywords: ['keyword1', 'keyword2']
 tags: ['Vue','Nuxt']

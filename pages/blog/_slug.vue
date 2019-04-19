@@ -1,22 +1,19 @@
 <template lang="pug">
     main.article
-        header
-            div(v-lazy:background-image="atributos.cover")
-                // img(:src='atributos.cover')
-            div
-                Fecha(:date='atributos.date' :time='atributos.time')
-                h1 {{ atributos.title }}
-                span Abdiel Martinez  |   
-                Tags(:tags='atributos.tags')
-                p {{atributos.description}}
+        Header(
+        :imgSrc='atributos.cover'
+        :date='atributos.date'
+        :time='atributos.time'
+        :title='atributos.title'
+        :tags='atributos.tags'
+        :description='atributos.description')
         Contenido(:render='render' :staticRender='staticRender')
         vue-disqus(shortname='abdielmartinez' :title='atributos.title' :identifier='atributos.slug')
         script(src='/prismjs/prism.js')  
 </template>
 
 <script>
-import Fecha from '@/components/articulo/Fecha'
-import Tags from '@/components/articulo/Tags'
+import Header from '@/components/articulo/Header'
 import Contenido from '@/components/articulo/Contenido'
 
 export default {
@@ -39,8 +36,7 @@ export default {
         }
     },
     components: {
-        Fecha,
-        Tags,
+        Header,
         Contenido,
     },
 }
@@ -54,25 +50,6 @@ main.article
     width 80%
     padding 2em
 
-    header
-        display flex  
-        & > div
-            flex 2
-            min-height 250px
-        & > div:first-child
-            border-radius var(--border-radius)
-            background-position center
-            background-size contain
-            background-repeat no-repeat
-            border 1px solid rgba(0, 0, 0, 0.25)
-        & > div:nth-child(2)
-            padding 1em
-        span
-            color var(--font-secondary-color)
-        .tags
-            display inline-block
-            margin-top 0.5em  
-            margin-bottom @margin-top
 .frontmatter-markdown
     margin-top 1em 
     margin-bottom @margin-top
