@@ -1,7 +1,8 @@
 ---
 title:  "Super titulo shido"
 description: "mi descripcion"
-date: "2019-04-01"
+date: "2017-04-18"
+time: "15:25"
 cover: "/img/logo.png"
 slug: "super-titulo"
 keywords: ['keyword1', 'keyword2']
@@ -12,29 +13,15 @@ tags: ['tag1','taj2']
 
 Lorem ipsum dolor sit amet consectetur, adipiscing elit et euismod nascetur, justo erat fames tempus. Lacus cubilia consequat ante mus massa fusce nunc sociosqu, lobortis fringilla sollicitudin id viverra proin. Ut porttitor libero urna laoreet sapien ante morbi velit sociis, dignissim fusce est ultricies proin purus fames placerat, vivamus sagittis nibh conubia feugiat penatibus faucibus curae.
 
-```html
-<script>
-import algo from './algo'
+* item lista 1
+* item lista 1
+* item lista 1
 
-export default {
-  //necesario para exportar con los componentes internos dentro del md
-  components:{
-    algo
-  },
-  props:{
-    render      : {type: String, required: true},
-    staticRender: {type: String, required: true}
-  },
-  render (createElement) {
-    return this.templateRender ? this.templateRender() : createElement("div", "Rendering");
-  },
-  created () {
-    this.templateRender = new Function(this.render)();
-    this.$options.staticRenderFns = new Function(this.staticRender)();
-  }
-}
-</script>
-```
+[super link](#)
+[super link](#123)
+[super link](#a)
+
+> Blockquotes are very handy in email to emulate reply text.
 
 ```javascript
 const persona = {nombre: 'abdiel', edad:21}
@@ -47,12 +34,6 @@ const persona = {nombre: 'abdiel', edad:21}
 article.card
     nuxt-link(v-lazy:background-image="imagen"  :to='url')
     section
-        nuxt-link(:to='url')
-            h2 {{ titulo }}
-            .subtitle
-                time(:datetime='fecha') {{fechaLetras}} 
-                span | {{tiempo_lectura}}
-            p {{descripcion}}
         footer
             .tags
                 nuxt-link( v-for='(tag, index) of tags' :to='`tag/${tag}`' :key='index') {{tag}} 
@@ -75,7 +56,9 @@ article.card
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
-Ut morbi torquent magna ornare feugiat posuere velit gravida sagittis tincidunt duis ad arcu, conubia at rhoncus leo bibendum himenaeos congue sociis odio accumsan dui cras, nunc aenean quam cursus enim dictum sollicitudin metus phasellus nascetur sociosqu blandit. Condimentum parturient cum congue sociis egestas nulla elementum dapibus, nec himenaeos metus gravida mollis diam vehicula, nascetur hac ac nisi nostra lacinia aenean. Metus a suspendisse laoreet mauris rhoncus eros interdum ultrices facilisi tincidunt maecenas, dis cubilia est curabitur mattis nec faucibus inceptos eget.
+Ut morbi torquent magna ornare feugiat posuere velit gravida sagittis tincidunt duis ad arcu, conubia at rhoncus leo bibendum himenaeos congue sociis odio accumsan dui cras, nunc aenean quam cursus enim dictum sollicitudin metus phasellus nascetur sociosqu blandit.
+
+Condimentum parturient cum congue sociis egestas nulla elementum dapibus, nec himenaeos metus gravida mollis diam vehicula, nascetur hac ac nisi nostra lacinia aenean. Metus a suspendisse laoreet mauris rhoncus eros interdum ultrices facilisi tincidunt maecenas, dis cubilia est curabitur mattis nec faucibus inceptos eget.
 Three or more...
 
 ---

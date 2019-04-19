@@ -19,7 +19,7 @@ main
 
 <script>
 // import Logo from '~/components/Logo.vue'
-import CardArticle from '@/components/CardArticle';
+import CardArticle from '@/components/articulo/Card';
 
 export default {
   components: {

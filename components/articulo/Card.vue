@@ -5,8 +5,8 @@ article.card
         nuxt-link(:to='url')
             h2 {{ titulo }}
             .subtitle
-                time(:datetime='fecha') {{fechaLetras}} 
-                span | {{tiempo_lectura}}
+                Fecha(date='2018-06-09' time='16:10')
+                // span | {{tiempo_lectura}}
             p {{descripcion}}
         footer
             .tags
@@ -17,6 +17,7 @@ article.card
 
 
 <script>
+import Fecha from './Fecha'
 export default {
     props:{
         img:{type:String, required: true},
@@ -27,6 +28,9 @@ export default {
         tags:{type:Array, required:true},
         comentarios:{type:Number, required:true},
         url:{type: String},
+    },
+    components:{
+        Fecha
     },
     computed:{
         fechaLetras(){

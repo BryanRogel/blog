@@ -1,5 +1,5 @@
 <script>
-import algo from './algo'
+import algo from './../algo'
 
 export default {
   //necesario para exportar con los componentes internos dentro del md
