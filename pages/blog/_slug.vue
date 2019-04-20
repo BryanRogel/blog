@@ -1,13 +1,14 @@
 <template lang="pug">
     main.article
         Header(
-        :imgSrc='atributos.cover'
-        :date='atributos.date'
-        :time='atributos.time'
-        :title='atributos.title'
-        :tags='atributos.tags'
-        :description='atributos.description')
+            :imgSrc='atributos.cover'
+            :date='atributos.date'
+            :time='atributos.time'
+            :title='atributos.title'
+            :tags='atributos.tags'
+            :description='atributos.description')
         Contenido(:render='render' :staticRender='staticRender')
+        ShareButtons
         vue-disqus(shortname='abdielmartinez' :title='atributos.title' :identifier='atributos.slug')
         script(src='/prismjs/prism.js')  
 </template>
@@ -15,6 +16,7 @@
 <script>
 import Header from '@/components/articulo/Header'
 import Contenido from '@/components/articulo/Contenido'
+import ShareButtons from '@/components/ShareButtons'
 
 export default {
     layout:'blog.layout',
@@ -38,6 +40,7 @@ export default {
     components: {
         Header,
         Contenido,
+        ShareButtons
     },
 }
 </script>

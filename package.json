@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/google-analytics": "^2.2.0",
     "cross-env": "^5.2.0",
     "date-fns": "^2.0.0-alpha.27",
     "frontmatter-markdown-loader": "^1.6.0",
@@ -22,7 +23,8 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-disqus": "^3.0.5",
-    "vue-lazyload": "^1.2.6"
+    "vue-lazyload": "^1.2.6",
+    "vue-share-buttons": "^1.0.6"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
