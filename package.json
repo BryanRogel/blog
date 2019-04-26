@@ -11,6 +11,14 @@
     "generate": "nuxt generate",
     "heroku-postbuild": "npm run build"
   },
+  repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anb98/blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Anb98/blog/issues"
+  },
+  "homepage": "https://github.com/Anb98/blog#readme",
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/google-analytics": "^2.2.0",
