@@ -1,6 +1,7 @@
 <template lang="pug">
 main
-    h4 Mi portafolio
+    h2 Próximamente
+    div 
 </template>
 
 
@@ -12,6 +13,15 @@ export default {
 }
 </script>
 
-<style >
+<style lang='stylus' scoped>
+h2
+    text-align center
+    margin-bottom 0.5em
+div
+    height 46vh
+    background url('/img/under_construction.svg')
+    background-size contain
+    background-position center
+    background-repeat no-repeat
 </style>
 

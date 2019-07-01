@@ -1,14 +1,16 @@
 <template lang="pug">
 main
     h2 Página no encontrada 
-    div(v-lazy:background-image="'/img/404.png'")
+    div
 </template>
 
 <style lang="stylus" scoped>
 h2
     text-align center
+    margin-bottom 0.5em
 div
-    height 50vh
+    height 46vh
+    background url('/img/404.svg')
     background-size contain
     background-position center
     background-repeat no-repeat

@@ -2,7 +2,7 @@
 header(ref='header')
     figure
         lazy-component
-            img(src="https://scontent.fsal3-1.fna.fbcdn.net/v/t1.0-1/c0.5.160.160a/p160x160/34201966_1683221888460673_3951761029221842944_n.jpg?_nc_cat=105&_nc_ht=scontent.fsal3-1.fna&oh=b44147e41262a5a6bfe8e45fe1825293&oe=5CDE8615", alt="Foto perfil")
+            img(src="/img/perfil.jpg", alt="Foto perfil")
     section
         h1 <span>Hola, soy</span> Abdiel Martinez
         h2 Desarrollador web amante de Vue y Laravel
