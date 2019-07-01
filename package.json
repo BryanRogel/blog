@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "heroku-postbuild": "npm run build"
   },
-  repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/Anb98/blog.git"
   },
