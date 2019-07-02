@@ -16,7 +16,7 @@
 <script>
 import Header from '@/components/articulo/Header'
 import Contenido from '@/components/articulo/Contenido'
-import ShareButtons from '@/components/ShareButtons'
+import ShareButtons from '@/components/shareButtons'
 
 export default {
     layout:'blog.layout',

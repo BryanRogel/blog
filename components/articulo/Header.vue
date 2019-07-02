@@ -7,11 +7,13 @@
             span {{author || 'Abdiel Martinez'}}  |   
             Tags(:tags='tags')
             p {{ description }}
+            ShareButtons(:onlyIcon='true')
 </template>
 
 <script>
-import Fecha from '@/components/articulo/Fecha'
-import Tags from '@/components/articulo/Tags'
+import Fecha from './Fecha'
+import Tags from './Tags'
+import ShareButtons from './../shareButtons'
 
 export default {
     props:{
@@ -25,7 +27,8 @@ export default {
     },
     components:{
         Fecha,
-        Tags
+        Tags,
+        ShareButtons
     },
     computed:{
         imagen(){
