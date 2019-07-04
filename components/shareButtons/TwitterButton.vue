@@ -79,7 +79,7 @@ $painted-color: hsla(202, 66%, 43%, 1);
   color: #fff;
   background-color: $main-color;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Helvetica Neue", Arial, 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   font-weight: 400;
   vertical-align: top;

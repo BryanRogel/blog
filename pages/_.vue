@@ -3,6 +3,20 @@ main
     h2 Página no encontrada 
     div
 </template>
+<script>
+export default {
+    head:{
+        title:'Pagina no encontrada'
+    },
+    mounted(){
+        this.$store.commit('footer/setVisible', true);
+    },
+    beforeDestroy(){
+        this.$store.commit('footer/setVisible', false);
+    },
+}
+</script>
+
 
 <style lang="stylus" scoped>
 h2

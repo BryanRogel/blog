@@ -23,7 +23,7 @@ export default {
     head(){
         return{
             link:[{ rel:"stylesheet", href:"/prismjs/prism.css"}],
-            title: `${this.atributos.title} | Abdiel Martinez`
+            title: this.atributos.title,
             // Si se establece aca falla al hacer first render
             // script:[{ src:'/prismjs/prism.js'}]
         }
@@ -37,6 +37,12 @@ export default {
             staticRender : file.vue.staticRenderFns,
         }
     },
+    mounted(){
+        this.$store.commit('footer/setVisible', true);
+    },
+    beforeDestroy(){
+        this.$store.commit('footer/setVisible', false);
+    },
     components: {
         Header,
         Contenido,
@@ -49,9 +55,10 @@ export default {
 main.article
     background var(--fondo-secundario);
     margin auto
-    font-family 'Open Sans', sans-serif
+    font-family 'Open Sans', 'sans-serif'
     width 80%
     padding 2em
+    margin-bottom 3em
 
 .frontmatter-markdown
     margin-top 1em 

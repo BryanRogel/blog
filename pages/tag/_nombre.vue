@@ -5,7 +5,12 @@
 
 <script>
 export default {
-    
+    mounted(){
+        this.$store.commit('footer/setVisible', true);
+    },
+    beforeDestroy(){
+        this.$store.commit('footer/setVisible', false);
+    },
 }
 </script>
 

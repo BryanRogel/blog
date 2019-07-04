@@ -65,8 +65,8 @@ export default {
 nav
     font-family Roboto
     position relative
+    z-index 3
     width 100%
-    // bottom 0px
     text-align center
     box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.15);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%);

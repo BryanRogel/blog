@@ -25,6 +25,12 @@ export default {
   components: {
     CardArticle,
   },
+  mounted(){
+    this.$store.commit('footer/setVisible', true);
+  },
+  beforeDestroy(){
+    this.$store.commit('footer/setVisible', false);
+  },
   data(){
     return{
       articulos:[
@@ -146,15 +152,17 @@ export default {
       return gruposArticulos;
     },
   },
-  methods:{
-    
-  },
 }
 </script>
 
 <style lang="stylus">
 main
-  padding 2em
+  z-index 2
+  padding 2em 2em 1em
+  margin-bottom 3em
+  position relative
+  background-color var(--fondo-primario)
+  box-shadow 0px 4px 3px rgba(0, 0, 0, 0.25) 
 
 .cards
   display flex

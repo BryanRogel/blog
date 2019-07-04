@@ -8,8 +8,14 @@ main
 <script>
 export default {
     head:{
-        title:'Abdiel Martinez | Portafolio'
-    }
+        title:'Portafolio'
+    },
+    mounted(){
+        this.$store.commit('footer/setVisible', true);
+    },
+    beforeDestroy(){
+        this.$store.commit('footer/setVisible', false);
+    },
 }
 </script>
 
@@ -18,7 +24,7 @@ h2
     text-align center
     margin-bottom 0.5em
 div
-    height 46vh
+    height 49vh
     background url('/img/under_construction.svg')
     background-size contain
     background-position center
