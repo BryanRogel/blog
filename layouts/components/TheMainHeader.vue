@@ -32,7 +32,7 @@ header
     z-index 3
     padding 2em
     padding-top 1em
-    background linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') center
+    background linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%), url('https://firebasestorage.googleapis.com/v0/b/blog-f2e52.appspot.com/o/portada.jpg?alt=media&token=5f17d2e4-ab6f-4222-b01d-375916528203') center
     background-size cover
     min-height 200px
     display flex
