@@ -1,6 +1,6 @@
 <template lang="pug">
     .tags
-        nuxt-link( v-for='(tag, index) of tags' :to='`/tag/${tag}`' :key='index') {{tag}} 
+        nuxt-link( v-for='(tag, index) of tags' :to='`/tag/${tag.toLowerCase()}`' :key='index') {{tag}} 
 </template>
 <script>
 export default {

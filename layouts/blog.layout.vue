@@ -1,5 +1,6 @@
 <template lang='pug'>
 div
+    vueCobra(color='#10ac84')
     TheNav
     nuxt
     TheFooter(:isArticle='true')
@@ -8,8 +9,11 @@ div
 <script>
 import TheNav from './components/TheMainNav'
 import TheFooter from './components/TheMainFooter'
+import vueCobra  from 'vue-cobra'
+
 export default {
     components:{
+        vueCobra,
         TheNav,
         TheFooter
     },

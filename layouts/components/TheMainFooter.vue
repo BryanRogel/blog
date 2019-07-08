@@ -1,6 +1,6 @@
 <template lang='pug' >
 footer.mainFooter
-    p(:class='{isArticle, isVisible, isInvisible: !isVisible}') Made with #[i.fas.fa-heart] by #[a(href='#') Anb98]
+    p(:class='{isArticle, isVisible, isInvisible: !isVisible}') Made with #[i.fas.fa-heart] by #[a(href='#') me]
 </template>
 
 <script>

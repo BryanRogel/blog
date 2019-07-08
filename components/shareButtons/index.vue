@@ -1,5 +1,5 @@
 <template lang="pug">
-    lazy-component.shareButtons
+    .shareButtons
         div(v-if='onlyIcon')
             FacebookButton(:isBlank="false" btnText)
             TwitterButton(:isBlank="false" btnText)
