@@ -15,15 +15,17 @@ export const mutations = {
 
             root.style.setProperty('--fondo-primario', '#1c2833');
             root.style.setProperty('--fondo-secundario', '#273746');
+            root.style.setProperty('--fondo-articulo-relacionado', '#35495e');
             root.style.setProperty('--font-primary-color', '#a6acaf');
             root.style.setProperty('--font-secondary-color', '#808b96');
         }
         else
         {
             localStorage.removeItem('theme');
-
+            
             root.style.setProperty('--fondo-primario', '#dfe6e9');
             root.style.setProperty('--fondo-secundario', '#fefefe');
+            root.style.setProperty('--fondo-articulo-relacionado', '#fefefe');
             root.style.setProperty('--font-primary-color', 'black');
             root.style.setProperty('--font-secondary-color', '#8395a7');
         }

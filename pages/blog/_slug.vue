@@ -9,6 +9,7 @@
             :description='atributos.description')
         Contenido(:render='render' :staticRender='staticRender')
         ShareButtons
+        Relacionados
         vue-disqus(shortname='abdielmartinez' :title='atributos.title' :identifier='atributos.slug')
         script(src='/prismjs/prism.js')  
 </template>
@@ -17,6 +18,7 @@
 import Header from '@/components/articulo/Header'
 import Contenido from '@/components/articulo/Contenido'
 import ShareButtons from '@/components/shareButtons'
+import Relacionados from '@/components/articulo/Relacionados'
 
 export default {
     layout:'blog.layout',
@@ -46,7 +48,8 @@ export default {
     components: {
         Header,
         Contenido,
-        ShareButtons
+        ShareButtons,
+        Relacionados
     },
 }
 </script>
