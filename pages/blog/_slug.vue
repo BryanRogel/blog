@@ -26,8 +26,23 @@ export default {
         return{
             link:[{ rel:"stylesheet", href:"/prismjs/prism.css"}],
             title: this.atributos.title,
-            // Si se establece aca falla al hacer first render
-            // script:[{ src:'/prismjs/prism.js'}]
+            // script:[{ src:'/prismjs/prism.js'}] Si se establece aca falla al hacer first render
+
+            meta: [
+                { hid    : 'description', name: 'description', content: this.atributos.description },
+                // Opengraph -facebook
+                {hid:'ogTitle', property: 'og:title', content: "Abdiel Martinez | "+this.atributos.title},
+                {hid:'ogDescription', property: 'og:description', content: this.atributos.description},
+                {hid:'ogImg', property: 'og:image', content: 'http://www.abdielmartinez.com/img/banner.png'},
+                
+                // Twitter card
+                {hid:'twTitle', name: 'twitter:title', content: "Abdiel Martinez | "+this.atributos.title},
+                {hid:'twDescription', name: 'twitter:description', content: this.atributos.description},
+                {hid:'twImg', name: 'twitter:image:src', content: 'http://www.abdielmartinez.com/img/perfil.jpg'},
+            ],
+
+            __dangerouslyDisableSanitizers: ['script'],
+            script: [{ innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }],
         }
     },
     async asyncData(){
@@ -37,6 +52,41 @@ export default {
             atributos    : file.attributes,
             render       : file.vue.render,
             staticRender : file.vue.staticRenderFns,
+        }
+    },
+    computed:{
+        structuredData(){
+            return {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "http://abdielmartinez.com"+this.$nuxt.$route.path
+                },
+                "headline": this.atributos.title,
+                "image": [
+                    "https://example.com/photos/1x1/photo.jpg",
+                    "https://example.com/photos/4x3/photo.jpg",
+                    "https://example.com/photos/16x9/photo.jpg"
+                ],
+                "datePublished": "2019-02-05T08:00:00+08:00",
+                "dateModified": "2019-02-05T09:20:00+08:00",
+                "author": {
+                    "@type": "Person",
+                    "name": "Abdiel Martinez"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Abdiel Martinez",
+                    "logo": {
+                    "@type": "ImageObject",
+                    "url": "http://www.abdielmartinez.com/img/perfil.jpg"
+                    }
+                },
+                "description": this.atributos.description,
+                "commentCount":7,
+                "keywords": this.atributos.tags.join(", ")
+            }
         }
     },
     mounted(){
