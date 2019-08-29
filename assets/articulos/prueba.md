@@ -5,7 +5,6 @@ date: "2019-04-18"
 time: "15:25"
 cover: "/logo.svg"
 slug: "super-titulo"
-keywords: ['keyword1', 'keyword2']
 tags: ['Vue','Nuxt']
 ---
 
