@@ -2,7 +2,7 @@
 header(ref='header')
     figure
         lazy-component
-            img(src="/img/perfil.jpg", alt="Foto perfil")
+            img(src="/img/perfil.webp", alt="Foto perfil")
     section
         h1 <span>Hola, soy</span> Abdiel Martinez
         h2 Desarrollador web amante de Vue y Laravel

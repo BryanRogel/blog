@@ -37,6 +37,7 @@ export default {
     transition 0.5s 
     margin-left 1em
     margin-right @margin-left
+    margin-bottom @margin-left
     background-color var(--fondo-articulo-relacionado)
 
     &:hover
