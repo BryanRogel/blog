@@ -71,6 +71,7 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', { id: 'UA-138699529-1', dev: false }]
   ],
   /*
@@ -78,6 +79,16 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  pwa: {
+    manifest: {
+      name: 'Abdiel Martinez | Blog',
+      short_name: 'AbdielBlog',
+      lang: 'es',
+      orientation: 'portrait',
+      description: "Mi blog personal y portafolio",
+    }
   },
 
   /*

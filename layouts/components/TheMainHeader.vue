@@ -27,7 +27,7 @@ export default {
 
 <style lang="stylus" scoped>
 header
-    font-family 'Roboto'
+    font-family 'Roboto', sans-serif
     position relative
     z-index 3
     padding 2em

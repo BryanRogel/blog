@@ -66,7 +66,7 @@ export default {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
 
 nav
-    font-family Roboto
+    font-family Roboto, sans-serif
     position relative
     z-index 3
     width 100%

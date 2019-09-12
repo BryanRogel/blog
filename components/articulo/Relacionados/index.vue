@@ -2,7 +2,7 @@
 .relacionados
     h3 Articulos relacionados
     .ArtRelacionados
-        Item( v-for='item of data' url='/' img='/img/banner.png' titulo='De vue a react lo que aprendi' descripcion='mi descripccion asdfasdf asdfasdfg gdfghfgh jghjghjgh er5ertrty ')
+        Item( v-for='(item, i) of data' :key='i' url='/' img='/img/banner.png' titulo='De vue a react lo que aprendi' descripcion='mi descripccion asdfasdf asdfasdfg gdfghfgh jghjghjgh er5ertrty ')
 </template>
 
 <script>

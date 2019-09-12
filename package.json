@@ -23,10 +23,11 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/google-analytics": "^2.2.0",
+    "@nuxtjs/pwa": "^3.0.0-beta.19",
     "cross-env": "^5.2.0",
     "date-fns": "^2.0.0-alpha.27",
     "frontmatter-markdown-loader": "^1.6.0",
-    "nuxt": "^2.8.1",
+    "nuxt": "^2.9.2",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "stylus": "^0.54.5",
