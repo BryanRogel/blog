@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "analize": "nuxt build -a",
     "heroku-postbuild": "npm run build",
-    "newarticle":"node newArticle.js"
+    "newpost":"node newPost.js"
   },
   "repository": {
     "type": "git",
