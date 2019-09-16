@@ -1,8 +1,7 @@
 <template lang='pug'>
 header(ref='header')
     figure
-        lazy-component
-            img(src="/img/perfil.webp", alt="Foto perfil")
+        img(src="/img/perfil-lowR.jpg" data-src='/img/perfil.webp' alt="Foto perfil" class="lazyload" )
     section
         h1 <span>Hola, soy</span> Abdiel Martinez
         h2 Desarrollador web amante de Vue y Laravel
@@ -20,7 +19,8 @@ export default {
         TheSocials
     },
     mounted(){
-        // this.$refs.header.style.background=`linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') center`
+        this.$refs.header.style.background=`linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%), url('/img/portada.jpg') center`;
+        this.$refs.header.style.backgroundSize=`cover`;
     }
 }
 </script>
@@ -32,7 +32,7 @@ header
     z-index 3
     padding 2em
     padding-top 1em
-    background linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%), url('https://firebasestorage.googleapis.com/v0/b/blog-f2e52.appspot.com/o/portada.jpg?alt=media&token=5f17d2e4-ab6f-4222-b01d-375916528203') center
+    background linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%), url('/img/portada-lowR.jpg') center
     background-size cover
     min-height 200px
     display flex
@@ -40,6 +40,7 @@ header
     flex-wrap wrap
     align-items center
     box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.15);
+    transition opacity 1s
     section
         padding-bottom 1em
         text-align center

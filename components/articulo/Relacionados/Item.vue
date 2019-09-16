@@ -1,6 +1,6 @@
 <template lang='pug'>
 nuxt-link.relacionado(:to='url') 
-    .img(v-lazy:background-image="imagen")
+    div(ref='cover')
     .contenido
         h3 {{titulo}}
         p {{descripcion}}
@@ -14,15 +14,9 @@ export default {
         titulo:{type:String, required: true},
         descripcion:{type: String, required:true},
     },
-    computed:{
-        imagen(){
-            return {
-                src: this.img,
-                error: '/img/default.svg',
-                loading: '/img/default.svg'
-            }
-        }
-
+    mounted(){
+        this.$refs.cover.style.background=`url('${this.img}') center no-repeat`
+        this.$refs.cover.style.backgroundSize=`cover`;
     }
 }
 </script>
@@ -44,14 +38,13 @@ export default {
         transform translateY(-10px)
         box-shadow 0px 10px 20px rgba(0, 0, 0, 0.25)
 
-    .img
+    & > div:first-child
         height 11em
         width 14em
-        background-position center
-        background-size cover
-        background-repeat no-repeat
         border-top-left-radius var(--border-radius)
         border-top-right-radius var(--border-radius)
+        background url('/img/default.svg') center no-repeat
+        background-size cover
     
     .contenido
         padding 0.5em 1em

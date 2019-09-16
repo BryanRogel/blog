@@ -1,7 +1,7 @@
 <template lang="pug">
     main.article
         Header(
-            :imgSrc='atributos.cover'
+            :img='atributos.cover'
             :date='atributos.date'
             :time='atributos.time'
             :title='atributos.title'

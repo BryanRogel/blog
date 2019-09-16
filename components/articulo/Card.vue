@@ -1,6 +1,7 @@
 <template lang="pug">
 article.card
-    nuxt-link(v-lazy:background-image="imagen"  :to='url')
+    nuxt-link(:to='url')
+        img(:data-src="img" src='/img/default.svg' class="lazyload" )
     section
         nuxt-link(:to='url')
             h2 {{ titulo }}
@@ -38,13 +39,6 @@ export default {
         fechaLetras(){
             return '05 de marzo 2019';
         },
-        imagen(){
-            return {
-                src: this.img,
-                error: '/img/default.svg',
-                loading: '/img/default.svg'
-            }
-        }
     },
 }
 </script>
@@ -69,14 +63,17 @@ article.card
         display block
         width 100%
         height 200px
+        text-align center
         border-bottom 1px solid #dcdde1
         opacity 1
         // background-image url('https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg') 
         border-radius var(--border-radius)
-        background-position center
-        background-size cover
-        background-repeat no-repeat
+        // background-position center
+        // background-size cover
+        // background-repeat no-repeat
         transition 1s
+        img
+            height 100%
 
     & > section
         padding 15px
