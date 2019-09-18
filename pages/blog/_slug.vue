@@ -46,7 +46,7 @@ export default {
         }
     },
     async asyncData(){
-        const file = await import('@/assets/articulos/prueba.md')
+        const file = await import('@/assets/articulos/prueba-numero-3.md')
 
         return {
             atributos    : file.attributes,

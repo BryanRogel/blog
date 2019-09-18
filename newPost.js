@@ -1,13 +1,5 @@
-const fs = require('fs');
-const readFile = (path) => new Promise((resolve, reject)=>{
-    fs.readFile(path,  "utf-8", (err, buf)=>{
-        if(err) return reject(err);
-        
-        resolve(buf.toString());
-    })
-})
-
-
+const nanoid   = require('nanoid');
+const fs       = require('fs');
 const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
@@ -16,7 +8,6 @@ const readline = require('readline').createInterface({
 const ask = (text)=> new Promise((resolve, reject)=>{
     readline.question(text, (answer)=>resolve(answer));
 });
-
 
 const validarSiNo = (res)=>{
     return res && res =='s' || res == 'S';
@@ -38,13 +29,17 @@ const validarContenido = async (contenido, length)=>{
 }
 
 const getPost= async ()=>{
-    console.log("Detalles del nuevo post");
+    console.log("\n\nDetalles del nuevo post");
     console.log('------------------------');
 
+    const date = new Date();
     const post = {
-        title     : '',
+        id         : nanoid(),
+        date       : `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`,
+        time       : `${date.getHours()}:${date.getMinutes()}`,
+        title      : '',
         description: '',
-        cover    : '',
+        cover      : '',
         tags       : [],
         slug       : ''
     }
@@ -72,15 +67,13 @@ const getPost= async ()=>{
     res = validarSiNo(await ask('Informacion correcta? s/n: '));
     if(res)
         return getPost();
-    else
+    else{
+        
         return post;
+    }
 }
 
-const makeHeader=(contenido)=>{
-    const date = new Date();
-    contenido.date = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
-    contenido.time = `${date.getHours()}:${date.getMinutes()}`;
-
+const makeYamlHeader=(contenido)=>{
     let res = '---';
 
     for (const key in contenido){
@@ -99,13 +92,22 @@ const makeHeader=(contenido)=>{
     return res;
 }
 
+const pathLinks = './assets/articulos/links'; ;
 (async ()=>{
+    try {
+        const post = await getPost();
+        const metaData = makeYamlHeader(post);
+        fs.writeFileSync(`./assets/articulos/${post.slug}.md`,metaData);
+
+        const links = require(pathLinks);
+        links.unshift(post);
     
-    const post = await getPost();
-    const metaData = makeHeader(post);
-    fs.writeFileSync(`./assets/articulos/${post.slug}.md`,metaData);
-    
-    
+        fs.writeFileSync(`${pathLinks}.js`,`module.exports  = ${JSON.stringify(links)}`);
+    } catch (error) {
+        console.log('error :', error);
+    }
 
     process.exit();
 })();
+
+module.exports = {pathLinks}
