@@ -25,7 +25,7 @@ export default {
         img:{type:String, required: true},
         titulo:{type:String, required: true},
         fecha:{type: String, required:true},
-        tiempo_lectura:{type: String, required:true},
+        // tiempo_lectura:{type: String, required:true},
         descripcion:{type: String, required:true},
         tags:{type:Array, required:true},
         comentarios:{type:Number, required:true},

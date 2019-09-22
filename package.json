@@ -38,6 +38,7 @@
     "vue-disqus": "^3.0.5"
   },
   "devDependencies": {
+    "inquirer": "^7.0.0",
     "nanoid": "^2.1.1",
     "nodemon": "^1.18.9"
   }

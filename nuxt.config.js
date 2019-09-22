@@ -38,8 +38,8 @@ module.exports = {
   },
 
   generate:{
+    fallback:true,
     routes:[
-      '/404',
       '/blog/tema-lavarel',
       '/tag/vue',
       '/tag/nuxt'

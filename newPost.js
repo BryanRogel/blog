@@ -10,7 +10,7 @@ const ask = (text)=> new Promise((resolve, reject)=>{
 });
 
 const validarSiNo = (res)=>{
-    return res && res =='s' || res == 'S';
+    return !res || res =='s' || res == 'S';
 }
 
 const validarContenido = async (contenido, length)=>{
@@ -33,10 +33,14 @@ const getPost= async ()=>{
     console.log('------------------------');
 
     const date = new Date();
-    const post = {
+    const metaData={
         id         : nanoid(),
         date       : `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`,
         time       : `${date.getHours()}:${date.getMinutes()}`,
+        isPublished: false
+    }
+
+    const post = {
         title      : '',
         description: '',
         cover      : '',
@@ -44,21 +48,22 @@ const getPost= async ()=>{
         slug       : ''
     }
 
-    post.title      = await validarContenido('Titulo',65);
+    post.title       = await validarContenido('Titulo',65);
     post.description = await validarContenido('Descripcion', 160);
-    post.cover     = await ask('Imagen de portada: ');
+    post.cover       = await ask('Imagen de portada: ');
     const preTags    = await ask("Tags (separados por comas): ");
+    post.tags        = preTags.split(',').map(item=>item.trim());
 
+    
+    
     let res; 
-    
-    post.tags = preTags.split(',').map(item=>item.trim());
-    
     res = validarSiNo(await ask('Slug automatico s/n: '));
+
     if(res)
-        post.slug = await ask('Slug personalizado: ');
-    else{
         post.slug = post.title.split(' ').join('-');
-    }
+    else
+        post.slug = await ask('Slug personalizado: ');
+    
 
     console.log('------------------------');
     console.log(post);
@@ -66,11 +71,10 @@ const getPost= async ()=>{
 
     res = validarSiNo(await ask('Informacion correcta? s/n: '));
     if(res)
+        return {...metaData, ...post};
+    else
         return getPost();
-    else{
-        
-        return post;
-    }
+    
 }
 
 const makeYamlHeader=(contenido)=>{
@@ -92,7 +96,7 @@ const makeYamlHeader=(contenido)=>{
     return res;
 }
 
-const pathLinks = './assets/articulos/links'; ;
+const pathLinks = './links';
 (async ()=>{
     try {
         const post = await getPost();

@@ -1,11 +1,13 @@
 ---
-title:  "Super titulo shido"
-description: "Este es un articulo sobre vue, pusg, stylus, nuxt laravel y todo loque se me ocurra poner"
-date: "2019-04-18"
-time: "15:25"
+id: "jIgoAFlwZvX2iRI0ctsH7"
+date: "2019-9-21"
+time: "23:25"
+isPublished: "true"
+title: "Super titulo shido"
+description: "Este es un articulo sobre vue, pusg, stylus, nuxt laravel y todo loque se me ocurra de prueba"
 cover: "/logo.svg"
-slug: "super-titulo"
-tags: ['Vue','Nuxt']
+tags: ['vue','nuxt','laravel','react',]
+slug: "test"
 ---
 
 ## Subtitulo 1

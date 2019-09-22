@@ -20,8 +20,17 @@ import Contenido from '@/components/articulo/Contenido'
 import ShareButtons from '@/components/shareButtons'
 import Relacionados from '@/components/articulo/Relacionados'
 
+import links from '@/links'
+
 export default {
     layout:'blog.layout',
+    validate({params, redirect}){
+        const {slug} = params;
+        const res = links.find(item=>item.slug==slug && item.isPublished);
+    
+        if(res) return true;
+        redirect('/404');
+    },
     head(){
         return{
             link:[{ rel:"stylesheet", href:"/prismjs/prism.css"}],
@@ -45,8 +54,8 @@ export default {
             script: [{ innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }],
         }
     },
-    async asyncData(){
-        const file = await import('@/assets/articulos/prueba-numero-3.md')
+    async asyncData({params}){
+        const file = await import(`@/assets/articulos/${params.slug}.md`)
 
         return {
             atributos    : file.attributes,

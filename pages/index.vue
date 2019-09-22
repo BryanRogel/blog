@@ -3,7 +3,7 @@ main
   .cards(v-for='(grupo, i) of grupoDeTres') 
     CardArticle( 
       v-for='(articulo, index) of grupo'
-      :key='index'
+      :key='articulo.id'
       :titulo='articulo.title'
       :fecha='articulo.date'
       :tiempo_lectura='articulo.tiempo_lectura'
@@ -25,105 +25,17 @@ export default {
   components: {
     CardArticle,
   },
+  async asyncData(){
+    const links = await import('@/links');
+    const filteredLinks= links.default.filter(item=>item.isPublished)
+
+    return {articulos:filteredLinks}
+  },
   mounted(){
     this.$store.commit('footer/setVisible', true);
   },
   beforeDestroy(){
     this.$store.commit('footer/setVisible', false);
-  },
-  data(){
-    return{
-      articulos:[
-        {
-          id:1,
-          title:'title articulo 1',
-          date:'2019-02-02',
-          tiempo_lectura: '4 minutos',
-          description: 'descripccion de mi articulo',
-          tags:['Vue','Nuxt'],
-          comentarios:1,
-          cover:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png',
-          slug:'tema-lavarel'
-        },
-        {
-          id:2,
-          title:'title articulo 2',
-          date:'2019-02-02',
-          tiempo_lectura: '4 minutos',
-          description: 'descripccion de mi articulo',
-          tags:['Vue','Nuxt'],
-          comentarios:1,
-          cover:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
-          slug:'tema-vue'
-        },
-        {
-          id:3,
-          title:'title articulo 3',
-          date:'2019-02-02',
-          tiempo_lectura: '4 minutos',
-          description: 'descripccion de mi articulo',
-          tags:['Vue','Nuxt'],
-          comentarios:1,
-          cover:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
-          slug:'1'
-        },
-        {
-          id:4,
-          title:'title articulo 4',
-          date:'2019-02-02',
-          tiempo_lectura: '4 minutos',
-          description: 'descripccion de mi articulo',
-          tags:['Vue','Nuxt'],
-          comentarios:1,
-          cover:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
-          slug:'1'
-        },
-        {
-          id:5,
-          title:'title articulo 5',
-          date:'2019-02-02',
-          tiempo_lectura: '4 minutos',
-          description: 'descripccion de mi articulo',
-          tags:['Vue','Nuxt'],
-          comentarios:1,
-          cover:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
-          slug:'1'
-        },
-        {
-          id:6,
-          title:'title articulo 6',
-          date:'2019-02-02',
-          tiempo_lectura: '4 minutos',
-          description: 'descripccion de mi articulo',
-          tags:['Vue','Nuxt'],
-          comentarios:1,
-          cover:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
-          slug:'1'
-        },
-        {
-          id:7,
-          title:'title articulo 7',
-          date:'2019-02-02',
-          tiempo_lectura: '4 minutos',
-          description: 'descripccion de mi articulo',
-          tags:['Vue','Nuxt'],
-          comentarios:1,
-          cover:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
-          slug:'1'
-        },
-        {
-          id:8,
-          title:'title articulo 8',
-          date:'2019-02-02',
-          tiempo_lectura: '4 minutos',
-          description: 'descripccion de mi articulo',
-          tags:['Vue','Nuxt'],
-          comentarios:1,
-          cover:'https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg',
-          slug:'1'
-        },
-      ]
-    }
   },
   computed:{
     grupoDeTres(){
