@@ -1,5 +1,6 @@
-const nanoid   = require('nanoid');
-const fs       = require('fs');
+const fs   = require('fs');
+const {db, auth} = require('./plugins/firebaseConfig');
+
 const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
@@ -34,9 +35,9 @@ const getPost= async ()=>{
 
     const date = new Date();
     const metaData={
-        id         : nanoid(),
         date       : `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`,
         time       : `${date.getHours()}:${date.getMinutes()}`,
+        timestamp  : date.valueOf(),
         isPublished: false
     }
 
@@ -54,7 +55,6 @@ const getPost= async ()=>{
     const preTags    = await ask("Tags (separados por comas): ");
     post.tags        = preTags.split(',').map(item=>item.trim());
 
-    
     
     let res; 
     res = validarSiNo(await ask('Slug automatico s/n: '));
@@ -74,7 +74,6 @@ const getPost= async ()=>{
         return {...metaData, ...post};
     else
         return getPost();
-    
 }
 
 const makeYamlHeader=(contenido)=>{
@@ -96,15 +95,25 @@ const makeYamlHeader=(contenido)=>{
     return res;
 }
 
+const login = async()=>{
+    const email = await ask('email: ');
+    const pass  = await ask('pass: ');
+    await auth.signInWithEmailAndPassword(email, pass);
+}
+
 const pathLinks = './links';
 (async ()=>{
     try {
+        await login();
         const post = await getPost();
-        const metaData = makeYamlHeader(post);
-        fs.writeFileSync(`./assets/articulos/${post.slug}.md`,metaData);
+        const res  = await db.collection('posts').doc(post.slug).set(post);
+        // const metaData = makeYamlHeader(post);
+    
+
+        fs.writeFileSync(`./assets/articulos/${post.slug}.md`,'');
 
         const links = require(pathLinks);
-        links.unshift(post);
+        links.unshift(post.slug);
     
         fs.writeFileSync(`${pathLinks}.js`,`module.exports  = ${JSON.stringify(links)}`);
     } catch (error) {

@@ -1,13 +1,3 @@
----
-title:  "Bienvenido"
-description: "Este es un articulo sobre vue, pusg, stylus, nuxt laravel y todo loque se me ocurra poner"
-date: "2019-08-28"
-time: "22:11"
-cover: "/logo.svg"
-slug: "super-titulo"
-tags: ['Vue','Nuxt']
----
-
 En un intento de crear mi portafolio, mejorar como programador, guardar mis descubrimientos, investigaciones y compartirlo con otros, me animé a crear este sitio web desde cero aprovechando asi todo el aprendizaje que eso conlleva. Con ese fin en mente aprendi un poco sobre el desarrollo de *Universal Applications, SEO, Structured Data* y asi otros conceptos, tecnologias y herramientas que iré compartiendo en el blog.
 
 No me dejarán mentir que en esto del desarrollo, la mayoria del contenido de tecnologias recientes y sobre todo interesante solo se suele encuentrar en ingles y aunque conociendo un poco de inglés o teniendo listo el traductor se sale adelante, encontrar contenido en español siempre se agradece 😊 asi que este es mi granito de arena 😁

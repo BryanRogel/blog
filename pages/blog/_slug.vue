@@ -21,12 +21,13 @@ import ShareButtons from '@/components/shareButtons'
 import Relacionados from '@/components/articulo/Relacionados'
 
 import links from '@/links'
+import {db} from '@/plugins/firebaseConfig'
 
 export default {
     layout:'blog.layout',
     validate({params, redirect}){
         const {slug} = params;
-        const res = links.find(item=>item.slug==slug && item.isPublished);
+        const res = links.find(item=>item==slug);
     
         if(res) return true;
         redirect('/404');
@@ -56,9 +57,11 @@ export default {
     },
     async asyncData({params}){
         const file = await import(`@/assets/articulos/${params.slug}.md`)
+        const snap = await db.collection('posts').doc(params.slug).get();
+        
 
         return {
-            atributos    : file.attributes,
+            atributos    : snap.data(),
             render       : file.vue.render,
             staticRender : file.vue.staticRenderFns,
         }
