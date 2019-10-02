@@ -4,7 +4,7 @@ header(ref='header')
         img(src="/img/perfil-lowR.jpg" data-src='/img/perfil.webp' alt="Foto perfil" class="lazyload" )
     section
         h1 <span>Hola, soy</span> Abdiel Martinez
-        h2 Desarrollador web amante de Vue y Laravel
+        h2 Desarrollador web amante de JS 👨‍💻
         TheSocials
     TheNav
 </template>

@@ -1,5 +1,4 @@
 const fs   = require('fs');
-const {db, auth} = require('./plugins/firebaseConfig');
 
 const readline = require('readline').createInterface({
     input: process.stdin,
