@@ -20,16 +20,12 @@ import Contenido from '@/components/articulo/Contenido'
 import ShareButtons from '@/components/shareButtons'
 import Relacionados from '@/components/articulo/Relacionados'
 
-import links from '@/links'
-import {db} from '@/plugins/firebaseConfig'
-
 export default {
+    name:'BlogPage',
     layout:'blog.layout',
-    validate({params, redirect}){
-        const {slug} = params;
-        const res = links.find(item=>item==slug);
+    validate({params, redirect, store}){
     
-        if(res) return true;
+        if(store.state.articulos.lista[params.slug]) return true;
         redirect('/404');
     },
     head(){
@@ -55,13 +51,13 @@ export default {
             script: [{ innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }],
         }
     },
-    async asyncData({params}){
+    async asyncData({params, store}){
         const file = await import(`@/assets/articulos/${params.slug}.md`)
-        const snap = await db.collection('posts').doc(params.slug).get();
+        const atributos = store.state.articulos.lista[params.slug]
         
 
         return {
-            atributos    : snap.data(),
+            atributos,
             render       : file.vue.render,
             staticRender : file.vue.staticRenderFns,
         }
@@ -130,6 +126,8 @@ main.article
     margin-bottom @margin-top
     padding-top @margin-top
     border-top 1px solid var(--fondo-primario)
+    word-break break-word
+
     & > p
     & > ul
     & > ol

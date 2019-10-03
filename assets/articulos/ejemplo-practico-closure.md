@@ -76,7 +76,8 @@ const buscarNodo = (nodo) => {
             }
         }
         
-        return false;   //si no existe valor de busqueda o si no hay resultados en el estado local ni en la api
+        return false;   //si no existe valor de busqueda 
+        //o si no hay resultados en el estado local ni en la api
     }
 }
 
@@ -91,7 +92,8 @@ const buscarMateria  = buscarNodo('materias');
 const buscarProfesor = buscarNodo('profesores');
 
 (async ()=>{  
-    // esto es conocido como funcion invocada inmediatamente, en ingles: Immediately invoked function expression (IIFE)
+    // esto es conocido como funcion invocada 
+    // inmediatamente, en ingles: Immediately invoked function expression (IIFE)
 
 
     const alumnoEncontrado   = await buscarAlumno( 'idAlumno');

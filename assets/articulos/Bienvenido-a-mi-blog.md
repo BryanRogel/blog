@@ -24,7 +24,7 @@ Algunos me dirán que debi haber usado *VuePress* que tiene el soporte oficial d
 ## Cómo compartiré el contenido
 Para compartir el contenido he pensado en utilizar al menos 4 formas:
 
-### Directamente en el articulo -Super básico
+### Directamente en el articulo - Super básico
 ```stylus
 h2
     text-align center
@@ -32,7 +32,7 @@ h2
 ```
 
 ---
-### Utilizando CodePen -Básico
+### Utilizando CodePen - Básico
 <p class="codepen" data-height="275" data-theme-id="dark" data-default-tab="css,result" data-user="anb98" data-slug-hash="WLVJKa" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Whatsapp Stories">
   <span>See the Pen <a href="https://codepen.io/anb98/pen/WLVJKa">
   Whatsapp Stories</a> by Abdiel Martinez (<a href="https://codepen.io/anb98">@anb98</a>)
@@ -42,10 +42,21 @@ h2
 
 ---
 
-### Utilizando Codesandbox -Intermedio
+### Utilizando Codesandbox - Intermedio
 <iframe src="https://codesandbox.io/embed/vibrant-easley-zrlyml2x1x?autoresize=1&fontsize=14&hidenavigation=1" title="whatsapp Stories" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 ---
 
-### Compartir el repositorio -Avanzado
+### Compartir el repositorio - Avanzado
 [https://github.com/Anb98/whatsapp_stories_clone](https://github.com/Anb98/whatsapp_stories_clone)
+
+---
+
+## Frecuencia de publicación
+Mi objetivo es poder estar publicando al menos 2 veces al mes. Espero que con los post que tengo ya en el tintero alcance la meta, algunos de los post que tengo en proceso son:
+
+* [Ejemplo practico de closure - JS](#)
+* [Pequeño login con socketio]()
+* [React con pugjs! 😮😮]()
+* [Pasando de Vue a React]()
+* [Pasando de Vue a Angular]()

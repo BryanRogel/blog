@@ -94,25 +94,20 @@ const makeYamlHeader=(contenido)=>{
     return res;
 }
 
-const login = async()=>{
-    const email = await ask('email: ');
-    const pass  = await ask('pass: ');
-    await auth.signInWithEmailAndPassword(email, pass);
-}
+
 
 const pathLinks = './links';
 (async ()=>{
     try {
-        await login();
         const post = await getPost();
-        const res  = await db.collection('posts').doc(post.slug).set(post);
+        // const res  = await db.collection('posts').doc(post.slug).set(post);
         // const metaData = makeYamlHeader(post);
     
 
         fs.writeFileSync(`./assets/articulos/${post.slug}.md`,'');
 
         const links = require(pathLinks);
-        links.unshift(post.slug);
+        links[post.slug]=post;
     
         fs.writeFileSync(`${pathLinks}.js`,`module.exports  = ${JSON.stringify(links)}`);
     } catch (error) {

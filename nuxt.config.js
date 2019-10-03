@@ -46,6 +46,9 @@ module.exports = {
     ]
   },
 
+  router: {
+    middleware: 'verifyLinks'
+  },
   /*
   ** Customize the progress-bar color
   */

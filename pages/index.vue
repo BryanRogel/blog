@@ -18,18 +18,12 @@ main
 
 
 <script>
-// import Logo from '~/components/Logo.vue'
 import CardArticle from '@/components/articulo/Card';
 
 export default {
+  name:'HomePage',
   components: {
     CardArticle,
-  },
-  async asyncData(){
-    const links = await import('@/links');
-    const filteredLinks= links.default.filter(item=>item.isPublished)
-
-    return {articulos:filteredLinks}
   },
   mounted(){
     this.$store.commit('footer/setVisible', true);
@@ -38,6 +32,9 @@ export default {
     this.$store.commit('footer/setVisible', false);
   },
   computed:{
+    articulos(){
+      return this.$store.getters['articulos/publicados'];
+    },
     grupoDeTres(){
       //agrupa los articulos en grpos para mostrarse en distintos tamanio
       let inicio            = 0;
